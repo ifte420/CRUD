@@ -8,7 +8,24 @@
 ?>
 <title>profile Page</title>
 <div class="row">
-    <div class="col-lg-9 m-auto">
+    <div class="col-lg-6">
+        <div class="card mt-5">
+            <h5 class="card-header text-center bg-info text-white">Change Profile Picture</h5>
+            <div class="card-body">
+            <div class="text-center">
+                <img src="img/profile image/default.png" alt="not found" class="img-fluid rounded-circle border border-info" width="110px">
+            </div>
+                <form action="profile_post.php" method="POST">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Old Password</label>
+                        <input type="file" class="form-control-file" name="old_password" id="exampleInputPassword1">
+                    </div>
+                    <button type="submit" class="btn btn-outline-info">Change Password</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
         <div class="card mt-5">
             <h5 class="card-header text-center bg-info text-white">Change Password</h5>
             <div class="card-body">
