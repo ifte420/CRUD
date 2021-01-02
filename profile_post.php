@@ -12,19 +12,13 @@
     $new_password = md5($_POST['new_password']);
     $confirm_password = md5($_POST['confirm_password']);
 
-    // if($old_password = " " || $new_password=" " || $confirm_password=" "){
-    //     $_SESSION['fill_err'] = "Please Fill up all input";
-    //     header('location: profile.php');
-    //     die();
-    // }
-    
     $check_query = "SELECT COUNT(*) AS total FROM registration WHERE email_address='$email_address' AND password = '$old_password'";
 
     if(mysqli_fetch_assoc(mysqli_query($db_connect, $check_query))['total'] == 1){
         if($new_password == $confirm_password){ 
             $password_update_query = "UPDATE registration SET password = '$confirm_password' WHERE email_address = '$email_address'";
             mysqli_query($db_connect, $password_update_query);
-             $_SESSION['chng_pass'] = "Your Passowrd Change successfully";
+            $_SESSION['chng_pass'] = "Your Passowrd Change successfully";
             header('location: profile.php');
         }
         else{
