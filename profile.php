@@ -1,10 +1,14 @@
 <?php
+    require_once 'includes/header.php';
+    require_once 'includes/nav.php';
+    require_once 'includes/db.php';
     session_start();
     if(!isset($_SESSION['login_status'])){
         header('location: login.php');
     }
-    require_once 'includes/header.php';
-    require_once 'includes/nav.php';
+    $email_address = $_SESSION['email_address_for_login_page'];
+    $select_query = "SELECT profile_image FROM registration WHERE email_address='$email_address'";
+    $img_name_for_db = mysqli_fetch_assoc(mysqli_query($db_connect, $select_query))['profile_image'];
 ?>
 <title>profile Page</title>
 <div class="row">
@@ -13,7 +17,7 @@
             <h5 class="card-header text-center bg-info text-white">Change Profile Picture</h5>
             <div class="card-body">
             <div class="text-center">
-                <img src="img/profile image/default.png" alt="not found" class="img-fluid rounded-circle border border-info" width="110px">
+                <img src="img/profile image/<?=$img_name_for_db?>" alt="not found" class="img-fluid rounded-circle border border-info" width="110px">
             </div>
                 <form action="profile_image_post.php" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
