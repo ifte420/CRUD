@@ -15,10 +15,10 @@
             <div class="text-center">
                 <img src="img/profile image/default.png" alt="not found" class="img-fluid rounded-circle border border-info" width="110px">
             </div>
-                <form action="profile_post.php" method="POST">
+                <form action="profile_image_post.php" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Old Password</label>
-                        <input type="file" class="form-control-file" name="old_password" id="exampleInputPassword1">
+                        <label for="exampleInputPassword1">Select Image</label>
+                        <input type="file" class="form-control-file" name="new_profile_image" id="exampleInputPassword1">
                     </div>
                     <button type="submit" class="btn btn-outline-info">Change Password</button>
                 </form>
