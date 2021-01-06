@@ -1,8 +1,8 @@
 <?php
+    session_start();
     require_once 'includes/header.php';
     require_once 'includes/nav.php';
     require_once 'includes/db.php';
-    session_start();
     if(!isset($_SESSION['login_status'])){
         header('location: login.php');
     }

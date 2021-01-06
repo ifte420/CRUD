@@ -4,16 +4,24 @@
     if(!isset($_SESSION['login_status'])){
         header('location: login.php');
     }
-    // Image upload start
+    // Image Extention with user id 
+    $email_address = $_SESSION['email_address_for_login_page'];
+    $get_id_query = "SELECT id FROM registration WHERE email_address='$email_address'";
+    $user_id = mysqli_fetch_assoc(mysqli_query($db_connect, $get_id_query))['id'];
     $image_name = $_FILES['new_profile_image']['name'];
+    $image_after_explode = explode("." , $image_name);
+    $extetion = end($image_after_explode);
+    $img_new_name = $user_id . "." . $extetion;
+    // Image Extention with user id 
+
+    // Image upload start
     $temp_location = $_FILES['new_profile_image']['tmp_name'];
-    $new_location = "img/profile image/" . $image_name;
+    $new_location = "img/profile image/" . $img_new_name;
     move_uploaded_file($temp_location, $new_location);
     // Image upload end
 
     // database upload image start
-    $email_address = $_SESSION['email_address_for_login_page'];
-    $update_query = "UPDATE registration SET profile_image='$image_name' WHERE email_address = '$email_address'";
+    $update_query = "UPDATE registration SET profile_image = '$img_new_name' WHERE email_address = '$email_address'";
     mysqli_query($db_connect, $update_query);
     header('location: profile.php');
     // database upload image end
