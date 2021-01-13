@@ -20,6 +20,16 @@
                 <img src="img/profile image/<?=$img_name_for_db?>" alt="not found" class="img-fluid rounded-circle border border-info" width="110px">
             </div>
                 <form action="profile_image_post.php" method="POST" enctype="multipart/form-data">
+                    <?php
+                    if(isset($_SESSION['fill_up'])):?>
+                    <div class="alert alert-danger">
+                    <?php
+                        echo $_SESSION['fill_up'];
+                        unset ($_SESSION['fill_up']);?>
+                    </div>
+                    <?php
+                    endif;
+                    ?>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Select Image</label>
                         <input type="file" class="form-control-file" name="new_profile_image" id="exampleInputPassword1">
