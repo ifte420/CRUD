@@ -10,9 +10,8 @@
     $user_id = mysqli_fetch_assoc(mysqli_query($db_connect, $get_id_query))['id'];
     $db_profile_image_name = mysqli_fetch_assoc(mysqli_query($db_connect, $get_id_query))['profile_image'];
     if($db_profile_image_name != 'default.png'){
-        echo "delete korte hobe";
+        unlink("img/profile image/" . $db_profile_image_name);
     }
-    die();
     $image_name = $_FILES['new_profile_image']['name'];
     $image_after_explode = explode("." , $image_name);
     $extetion = end($image_after_explode);
