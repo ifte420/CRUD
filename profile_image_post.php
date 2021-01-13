@@ -6,8 +6,13 @@
     }
     // Image Extention with user id 
     $email_address = $_SESSION['email_address_for_login_page'];
-    $get_id_query = "SELECT id FROM registration WHERE email_address='$email_address'";
+    $get_id_query = "SELECT id, profile_image FROM registration WHERE email_address='$email_address'";
     $user_id = mysqli_fetch_assoc(mysqli_query($db_connect, $get_id_query))['id'];
+    $db_profile_image_name = mysqli_fetch_assoc(mysqli_query($db_connect, $get_id_query))['profile_image'];
+    if($db_profile_image_name != 'default.png'){
+        echo "delete korte hobe";
+    }
+    die();
     $image_name = $_FILES['new_profile_image']['name'];
     $image_after_explode = explode("." , $image_name);
     $extetion = end($image_after_explode);
