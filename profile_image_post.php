@@ -18,6 +18,11 @@
         header('location: profile.php');
         die();
     }
+    if($_FILES['new_profile_image']['size'] > 1000000){
+        $_SESSION['fill_up'] = "Your file should be less than 1 MB!";
+        header('location: profile.php');
+        die();
+    }
     // Image Extention with user id 
     $email_address = $_SESSION['email_address_for_login_page'];
     $get_id_query = "SELECT id, profile_image FROM registration WHERE email_address='$email_address'";

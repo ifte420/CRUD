@@ -1,4 +1,4 @@
-<title>L og In Page</title>
+<title>Log In Page</title>
 <?php
     session_start();
     if(isset($_SESSION['login_status'])){
