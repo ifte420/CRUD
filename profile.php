@@ -18,6 +18,20 @@
             <div class="card-body">
             <div class="text-center">
                 <img src="img/profile image/<?=$img_name_for_db?>" alt="not found" class="img-fluid rounded-circle border border-info" width="110px">
+                <br>
+                <?php if($img_name_for_db != "default.png"):?>
+                    <a href="delete_profile_picture.php?picture_name=<?=$img_name_for_db?>" class="btn btn-danger">Delete Picture</a>
+                <?php endif; ?>
+                    <?php
+                        if(isset($_SESSION['delete_succes'])):?>
+                    <div class="alert alert-success">
+                    <?php
+                        echo $_SESSION['delete_succes'];
+                        unset ($_SESSION['delete_succes']);?>
+                    </div>
+                    <?php
+                    endif;
+                    ?>
             </div>
                 <form action="profile_image_post.php" method="POST" enctype="multipart/form-data">
                     <?php
