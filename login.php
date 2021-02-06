@@ -1,5 +1,5 @@
-<title>Log In Page</title>
 <?php
+    $title = "Log In Page";
     session_start();
     if(isset($_SESSION['login_status'])){
         header('location: dashboard.php');
@@ -58,9 +58,6 @@
             
         </div>
         <!-- end wrapper page -->
-
-
-
 
 <?php
     require_once 'includes/footer-adminto.php';

@@ -1,7 +1,6 @@
 <?php
     session_start();
     require_once 'includes/db.php';
-
     $full_name = $_POST['full_name'];
     $email_address = $_POST['email_address'];
     $password = md5($_POST['password']);
@@ -32,7 +31,7 @@
         }
     }
     else {
-        $_SESSION['fill up'] =  "Your Registration Form not full  fill up:( ! Plz try again..";
+        $_SESSION['fill up'] =  "Your Registration Form not full  fill up:( Plz try again..";
         header('location: registration page.php');
     }
 ?>
