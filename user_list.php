@@ -46,7 +46,7 @@
                             <?php
                                 endif;
                                 ?>
-                            <table class="table table-hover table-bordered">
+                            <table class="table table-hover table-bordered table-responsive-sm table-responsive-md">
                                 <thead>
                                     <tr>
                                         <th scope="col">Serial Num</th>

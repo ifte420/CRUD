@@ -11,7 +11,7 @@
                             <!--<span class="logo-large"><i class="mdi mdi-radar"></i> Adminto</span>-->
                         <!--</a>-->
                         <!-- Image Logo -->
-                        <a href="index.html" class="logo">
+                        <a href="dashboard.php" class="logo">
                             <img src="assets-adminto/images/logo-sm.png" alt="" height="26" class="logo-small">
                             <img src="assets-adminto/images/logo.png" alt="" height="24" class="logo-large">
                         </a>
