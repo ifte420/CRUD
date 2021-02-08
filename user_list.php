@@ -1,14 +1,15 @@
 <?php
     $title = "User List";
     session_start();
+    $email_address = $_SESSION['email_address_for_login_page'];
     if(!isset($_SESSION['login_status'])){
         header('location: login.php');
     }
     require_once 'includes/header-adminto.php';
     require_once 'includes/nav-adminto.php';
     require_once 'includes/db.php';
-    $select_query = "SELECT id,full_name,email_address,gender FROM registration";
-    $data_from_db = mysqli_query($db_connect, $select_query);
+    require_once 'includes/db-oop.php';
+    $data_from_db = $db->select("registration");
 ?>
 
     <div class="wrapper">
@@ -65,8 +66,15 @@
                                     <tr>
                                         <th><?=$number++ ?></th>
                                         <td><?=$user_data['id']?></td>
-                                        <td><?=ucwords($user_data['full_name'])?><small class="bg-danger text-white">Meaw</small></td>
-                                        <td><?=$user_data['email_address']?></td>
+                                        <td><?=ucwords($user_data['full_name'])?></td>
+                                        <td><?=$user_data['email_address']?>
+                                            <?php if($user_data['status'] == "active"):?>
+                                                <small class="btn-success"><?=$user_data['status']?></small>
+                                            <?php endif; ?>
+                                            <?php if($user_data['status'] == "inactive"):?>
+                                                <small class="btn-danger"><?=$user_data['status']?></small>
+                                            <?php endif; ?>
+                                        </td>
                                         <td><?=ucfirst($user_data['gender'])?></td>
                                         <td>
                                             <a class="btn btn-sm btn-outline-danger" href="user_delete.php?id=<?=$user_data['id']?> ">Delect</a>

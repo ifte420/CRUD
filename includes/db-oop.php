@@ -1,7 +1,7 @@
 <?php
 class DB {
     function db_connect(){
-        return $db_connect = mysqli_connect('localhost', 'root', '', 'php registration data');
+        return $db_connect = mysqli_connect('localhost', 'root', '', 'registration pratice');
     }
     function insert($table_name, $insert_place, $what_insert){
         $insert_query = "INSERT INTO $table_name ($insert_place) VALUES ($what_insert)";
@@ -14,12 +14,12 @@ class DB {
         return $from_db;
     }
     function select3key($what_to_select,$table_name, $another_write){
-        $select_query = "SELECT $what_to_select FROM $table_name $another_write";
+        $select_query = "SELECT $what_to_select FROM $table_name WHERE $another_write";
         $from_db = mysqli_query($this->db_connect(), $select_query);
         return $from_db;
     }
     function select_assoc($what_to_select,$table_name, $another_write){
-        $select_query = "SELECT $what_to_select FROM $table_name $another_write";
+        $select_query = "SELECT $what_to_select FROM $table_name WHERE $another_write";
         $from_db = mysqli_fetch_assoc(mysqli_query($this->db_connect(), $select_query));
         return $from_db;
     }

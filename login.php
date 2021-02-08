@@ -5,7 +5,6 @@
         header('location: dashboard.php');
     }
     require_once 'includes/header-adminto.php';
-    // require_once 'includes/nav.php';
 ?>
         <div class="account-pages"></div>
         <div class="clearfix"></div>
