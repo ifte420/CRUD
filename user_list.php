@@ -65,7 +65,7 @@
                                     <tr>
                                         <th><?=$number++ ?></th>
                                         <td><?=$user_data['id']?></td>
-                                        <td><?=ucwords($user_data['full_name'])?></td>
+                                        <td><?=ucwords($user_data['full_name'])?><small class="bg-danger text-white">Meaw</small></td>
                                         <td><?=$user_data['email_address']?></td>
                                         <td><?=ucfirst($user_data['gender'])?></td>
                                         <td>
