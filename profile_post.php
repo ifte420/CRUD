@@ -5,7 +5,7 @@
         header('location: login.php');
     }
     $email_address =  $_SESSION['email_address_for_login_page'];
-    if (empty($_POST['old_password']) || empty($_POST['new_password']) ||empty($_POST['confirm_password'])) {
+    if (empty($_POST['old_password']) || empty($_POST['new_password']) || empty($_POST['confirm_password'])) {
         $_SESSION['fill_err']="Please fill all required fields!";
         header("location: profile.php");
         die();

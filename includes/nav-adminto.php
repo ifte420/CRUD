@@ -74,6 +74,9 @@
                             <li class="has-submenu">
                                 <a href="user_list.php"><i class="mdi mdi-account-box"></i> <span> User List </span> </a>
                             </li>
+                            <li class="has-submenu">
+                                <a href="service.php"><i class="mdi mdi-key-variant"></i> <span> Service </span> </a>
+                            </li>
                         </ul>
                         <!-- End navigation menu -->
                     </div> <!-- end #navigation -->

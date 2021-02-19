@@ -10,6 +10,8 @@
 
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets-adminto/images/favicon.ico">
+        <!-- Font Awsome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
 
         <!--Morris Chart CSS -->
         <link rel="stylesheet" href="assets-adminto/plugins/morris/morris.css">
