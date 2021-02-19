@@ -21,6 +21,7 @@
                             <th>Service Icon</th>
                             <th>Service Name</th>
                             <th>Service Description</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -34,8 +35,22 @@
                             <td><h4><i class="<?=$service['service_icon']?>"></i></h4></td>
                             <td><?=$service['service_name']?></td>
                             <td><?=$service['service_description']?></td>
+                            <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <a href="service_delete.php?id=<?=$service['id']?>&service_name=<?=$service['service_name']?>" type="button" class="btn btn-danger">Delete</a>
+                            </div>
+                            </td>
                         </tr>
                         <?php } ?>
+                    <?php 
+                        if(isset($_SESSION['service_delete_status'])): ?>
+                        <div class="alert alert-success">
+                            <?php
+                                echo $_SESSION['service_delete_status'];
+                                unset($_SESSION['service_delete_status']);
+                            ?>
+                        </div>
+                    <?php endif;?>
                         </tbody>
                     </table>
                     </div>
